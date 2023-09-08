@@ -17,6 +17,27 @@
   <script>
     // Write your code here
 
+    function* getStop(){
+      yield "Poughkeepsie";
+      yield "Newburgh";
+      yield "Peekskill";
+      yield "Yonkers";
+      yield "Bronx";
+      yield "Grand Central";
+    }
+
+    const nycTrainline=getStop()
+    const trainNode=document.querySelector('#next-stop')
+    trainNode.addEventListener('click',()=>{
+      let currStop=nycTrainline.next()
+      if(currStop.done){
+        console.log("we made it")
+        trainNode.setAttribute('disabled',true)
+      }else{
+        console.log(currStop.value)
+      }
+    })
+
   </script>
 </body>
 

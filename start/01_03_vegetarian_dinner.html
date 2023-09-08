@@ -1,3 +1,6 @@
+  
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +12,14 @@
 </head>
 
 <body>
+
+  <!-- todo  : create an unordered list of vegetarian dishes -->
+
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
 
   <!-- Use this element to render your menu -->
+
+  
   <ul id="menu"></ul>
 
   <script>
@@ -33,8 +41,31 @@
         isVegetarian: true
       }
     ]
+
     // Write your code here
 
+    // function vegetarianMenu(menu){
+    //   let MenuNode=document.querySelector('#menu')
+    //   const vegetarianDishes=menu.filter(option=>option.isVegetarian===true)
+    //   vegetarianDishes.forEach(option=>{
+    //     let dish=document.createElement("li")
+    //     dish.textContent=option.name
+    //     MenuNode.appendChild(dish)
+    //   })
+    // }
+
+    // vegetarianMenu(menu)
+
+    function vegetarianMenu(menu){
+      let menuNode=document.querySelector('#menu')
+      const vegDishes=menu.filter(option=>option.isVegetarian===true)
+      vegDishes.map(option=>{
+        let dish=document.createElement("li")
+        dish.textContent=option.name
+        menuNode.appendChild(dish)
+      })
+    }
+    vegetarianMenu(menu)
   </script>
 </body>
 

@@ -18,8 +18,21 @@
 
   <script>
     // Write your code here
+    // using a closure create 3 color buttons taht change the document color on click
+function changeColor(color){
+  return ()=>document.body.style.background=color
+}
+
+const blueCl=changeColor('#0f62f3')
+const pinkCl=changeColor('#ff7eb6')
+const greenCl=changeColor('#42be65')
+
+    document.querySelector('#blue').addEventListener('click',blueCl)
+    document.querySelector('#pink').addEventListener('click',pinkCl)
+    document.querySelector('#green').addEventListener('click',greenCl)
 
   </script>
 </body>
 
 </html>
+

@@ -16,6 +16,30 @@
 
   <script>
     // Write your code here
+//     function foodtruck(menu){
+// let combined=menu.flat()
+// let unique=Array.from(new Set(combined))
+// let menuNode=document.querySelector('#combined-menu')
+// let dish=unique.map(item=>{
+//   let foodNode=document.createElement('li')
+  
+//   foodNode.textContent=item  // we can also use foodNode.innerText=item
+//   menuNode.appendChild(foodNode)
+// })
+//     }
+
+function foodtruck(menu){
+  let combined=menu.flat()
+  let unique=Array.from(new Set(combined))
+  let menuNode=document.querySelector("#combined-menu")
+  let dish=unique.map(item=>{
+    let foodNode=document.createElement('li')
+    foodNode.innerText=item
+    menuNode.appendChild(foodNode)
+  })
+}
+
+    foodtruck([["pizza","tacos"],["pancake","pizza","rice bowl"],["salad","burger","tacos"]])
 
   </script>
 </body>
